@@ -7,9 +7,10 @@ fun main() {
 }
 
 class PlayShow(){
-    fun show_game_number(num:String){
+    fun show_game_number(num:String, name:String){
         println()
         println("$num Game")
+        println("$name guesses")
     }
     fun show_game_step(step:Int, try_number:Int){               
     	println("Step $step - try number $try_number")        
@@ -23,9 +24,9 @@ class Play(){
     init{
         var Player_1 = Player("P_1")
         var Player_2 = Player("P_2")
-        PlayShow().show_game_number("FIRST")
+        PlayShow().show_game_number("FIRST", Player_2.name)
         play(Player_1, Player_2)
-        PlayShow().show_game_number("SECOND")
+        PlayShow().show_game_number("SECOND", Player_1.name)
         play(Player_2, Player_1)
     }
     fun play (p1:Player, p2:Player){
